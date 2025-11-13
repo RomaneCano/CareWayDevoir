@@ -1,4 +1,4 @@
-package com.example.careway.model
+package com.example.myapplication.model
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*

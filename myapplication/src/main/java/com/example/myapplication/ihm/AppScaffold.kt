@@ -1,8 +1,11 @@
-package com.example.careway.ihm
+package com.example.myapplication.ihm
 
 import androidx.compose.runtime.*
-import com.example.careway.viewmodel.CareWayViewModel
-import com.example.careway.model.*
+import com.example.myapplication.viewmodel.CareWayViewModel
+import com.example.myapplication.model.AppScreen
+import com.example.myapplication.ihm.screens.QrCodeScreen
+import com.example.myapplication.ihm.screens.TripDetailsScreen
+import com.example.myapplication.ihm.screens.MainScreenView
 
 @Composable
 fun CareWayApp(vm: CareWayViewModel) {
@@ -25,7 +28,12 @@ fun CareWayApp(vm: CareWayViewModel) {
                 TripDetailsScreen(
                     tripInfo = trip,
                     onBack = vm::closeTripDetails,
-                    bottomNavDisplayItems = listOf(BottomNavItem.Home, BottomNavItem.Search, BottomNavItem.History, BottomNavItem.Profile),
+                    bottomNavDisplayItems = listOf(
+                        BottomNavItem.Home,
+                        BottomNavItem.Search,
+                        BottomNavItem.History,
+                        BottomNavItem.Profile
+                    ),
                     selectedBottomNavIndex = bottomIndex,
                     onBottomNavItemSelected = vm::onBottomTabSelected,
                     onQrCodeClicked = vm::openQr

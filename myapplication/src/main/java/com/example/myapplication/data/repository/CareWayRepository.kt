@@ -1,8 +1,11 @@
 package com.example.careway.data.repository
 
-import com.example.careway.model.*
 import com.example.careway.data.remote.RemoteDataSource
 import com.example.myapplication.data.local.LocalDataSource
+import com.example.myapplication.model.CompletedTripInfo
+import com.example.myapplication.model.PendingRequestInfo
+import com.example.myapplication.model.TransporterInfo
+import com.example.myapplication.model.UpcomingTripInfo
 
 interface CareWayRepository {
     suspend fun getUpcomingTrips(): List<UpcomingTripInfo>

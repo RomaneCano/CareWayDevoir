@@ -1,4 +1,4 @@
-package com.example.careway.ihm
+package com.example.myapplication.ihm.screens
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -24,7 +24,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -32,13 +31,17 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.careway.model.*
 import kotlinx.coroutines.launch
 import com.example.myapplication.R
+import com.example.myapplication.ihm.BottomNavItem
+import com.example.myapplication.model.ActionButtonData
+import com.example.myapplication.model.CompletedTripInfo
+import com.example.myapplication.model.PendingRequestInfo
+import com.example.myapplication.model.TransporterInfo
+import com.example.myapplication.model.UpcomingTripInfo
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -305,8 +308,24 @@ fun UpcomingTripsPage(onNavigateToTripDetails: (UpcomingTripInfo) -> Unit) {
             profileImagePainter = null,
             profilePicVector = Icons.Filled.AccountCircle
         ),
-        UpcomingTripInfo("2", "Olivier C.", "Ambu81, VSL", "Lundi 23 juin 2025", "17:45 - 18:30", "Lieu A > Lieu B", isGroup = true),
-        UpcomingTripInfo("3", "Anne L.", "UrgVSL, VSL", "Mardi 24 juin 2025", "09:00 - 09:45", "Lieu C > Lieu D", profilePicVector = Icons.Filled.Person)
+        UpcomingTripInfo(
+            "2",
+            "Olivier C.",
+            "Ambu81, VSL",
+            "Lundi 23 juin 2025",
+            "17:45 - 18:30",
+            "Lieu A > Lieu B",
+            isGroup = true
+        ),
+        UpcomingTripInfo(
+            "3",
+            "Anne L.",
+            "UrgVSL, VSL",
+            "Mardi 24 juin 2025",
+            "09:00 - 09:45",
+            "Lieu C > Lieu D",
+            profilePicVector = Icons.Filled.Person
+        )
     )
     Column(modifier = Modifier.fillMaxSize()) {
         SearchBar(placeholderText = "Rechercher un transporteur ou une date")
@@ -372,8 +391,20 @@ fun CompletedTripCard(tripInfo: CompletedTripInfo) {
 @Composable
 fun CompletedTripsPage() {
     val sampleTrips = listOf(
-        CompletedTripInfo("1", "Hélène A.", "Taxi Care, taxi conventionné", "Lundi 9 juin 2025", "16:30 - 17:00"),
-        CompletedTripInfo("2", "Hélène A.", "Taxi Care, taxi conventionné", "Mercredi 7 mai 2025", "08:30 - 09:00")
+        CompletedTripInfo(
+            "1",
+            "Hélène A.",
+            "Taxi Care, taxi conventionné",
+            "Lundi 9 juin 2025",
+            "16:30 - 17:00"
+        ),
+        CompletedTripInfo(
+            "2",
+            "Hélène A.",
+            "Taxi Care, taxi conventionné",
+            "Mercredi 7 mai 2025",
+            "08:30 - 09:00"
+        )
     )
     Column(modifier = Modifier.fillMaxSize()) {
         SearchBar(placeholderText = "Rechercher un transporteur ou une date")
@@ -444,8 +475,23 @@ fun PendingRequestCard(requestInfo: PendingRequestInfo) {
 @Composable
 fun PendingRequestsPage() {
     val sampleRequests = listOf(
-        PendingRequestInfo("1", "UrgVSL", "05 56 00 01 02", "Lundi 30 juin 2025", "10:15", "Depuis 2h", profilePic = Icons.Filled.AccountCircle),
-        PendingRequestInfo("2", "Taxi Care", "06 01 02 03 00", "Jeudi 17 juillet 2025", "16:45 - 17:20", "Depuis 4j")
+        PendingRequestInfo(
+            "1",
+            "UrgVSL",
+            "05 56 00 01 02",
+            "Lundi 30 juin 2025",
+            "10:15",
+            "Depuis 2h",
+            profilePic = Icons.Filled.AccountCircle
+        ),
+        PendingRequestInfo(
+            "2",
+            "Taxi Care",
+            "06 01 02 03 00",
+            "Jeudi 17 juillet 2025",
+            "16:45 - 17:20",
+            "Depuis 4j"
+        )
     )
     Column(modifier = Modifier.fillMaxSize()) {
         SearchBar(placeholderText = "Rechercher un transporteur ou une date")
@@ -879,8 +925,17 @@ fun TransporterItemCard(transporter: TransporterInfo) {
 
 @Composable
 fun TransportersNearbySection() {
-    val sampleTransporter = TransporterInfo("1", "UrgVSL", "05 56 00 01 02", "1.2 KM", "4,8", "120", "Ouvert de 8h à 19h")
-    val sampleTransporter2 = TransporterInfo("2", "Taxi Care", "01 23 45 67 89", "2.5 KM", "4.5", "90", "Ouvert 24/7")
+    val sampleTransporter = TransporterInfo(
+        "1",
+        "UrgVSL",
+        "05 56 00 01 02",
+        "1.2 KM",
+        "4,8",
+        "120",
+        "Ouvert de 8h à 19h"
+    )
+    val sampleTransporter2 =
+        TransporterInfo("2", "Taxi Care", "01 23 45 67 89", "2.5 KM", "4.5", "90", "Ouvert 24/7")
 
     Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
         Text(text = "Transporteurs à proximité", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, modifier = Modifier.padding(bottom = 8.dp))

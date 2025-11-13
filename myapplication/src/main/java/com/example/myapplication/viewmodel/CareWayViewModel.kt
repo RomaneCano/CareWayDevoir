@@ -1,4 +1,4 @@
-package com.example.careway.viewmodel
+package com.example.myapplication.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,9 +6,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import com.example.careway.model.*
 import com.example.careway.data.repository.CareWayRepository
 import com.example.careway.data.repository.CareWayRepositoryImpl
+import com.example.myapplication.model.AppScreen
+import com.example.myapplication.model.CompletedTripInfo
+import com.example.myapplication.model.PendingRequestInfo
+import com.example.myapplication.model.TransporterInfo
+import com.example.myapplication.model.UpcomingTripInfo
 
 class CareWayViewModel(
     private val repository: CareWayRepository = CareWayRepositoryImpl()
