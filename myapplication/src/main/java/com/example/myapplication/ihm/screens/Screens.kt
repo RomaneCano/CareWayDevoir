@@ -276,7 +276,7 @@ fun UpcomingTripCard(
                 Icon(Icons.Filled.DateRange, contentDescription = "Date", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(tripInfo.date, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
                 Spacer(modifier = Modifier.width(16.dp))
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
+                Icon(Icons.Filled.Check, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(tripInfo.time, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -369,7 +369,7 @@ fun CompletedTripCard(tripInfo: CompletedTripInfo) {
                 Icon(Icons.Filled.DateRange, contentDescription = "Date", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(tripInfo.date, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
                 Spacer(modifier = Modifier.width(16.dp))
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
+                Icon(Icons.Filled.Check, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(tripInfo.time, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -453,7 +453,7 @@ fun PendingRequestCard(requestInfo: PendingRequestInfo) {
                 Icon(Icons.Filled.DateRange, contentDescription = "Date", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(requestInfo.date, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
                 Spacer(modifier = Modifier.width(16.dp))
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
+                Icon(Icons.Filled.Check, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(16.dp))
                 Text(requestInfo.time, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp))
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -600,7 +600,7 @@ fun TripDetailsScreen(
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(tripInfo.date, color = Color.White, fontSize = 14.sp)
                         Spacer(modifier = Modifier.width(16.dp))
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(20.dp))
+                        Icon(Icons.Filled.Check, contentDescription = "Time", tint = Color.White, modifier = Modifier.size(20.dp))
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(tripInfo.time, color = Color.White, fontSize = 14.sp)
                     }
@@ -795,7 +795,7 @@ fun NotificationCard() {
                     Text(text = "Lundi 23 juin 2025", fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp), color = Color.Gray)
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Time", modifier = Modifier.size(16.dp), tint = Color.Gray)
+                    Icon(Icons.Filled.Check, contentDescription = "Time", modifier = Modifier.size(16.dp), tint = Color.Gray)
                     Text(text = "11:00 - 12:00", fontSize = 12.sp, modifier = Modifier.padding(start = 4.dp), color = Color.Gray)
                 }
             }
